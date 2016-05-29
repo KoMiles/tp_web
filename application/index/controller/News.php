@@ -6,7 +6,9 @@ class News
 {
     public function index()
     {
+        
         $view = new \think\View();
+        $view -> assign("name","komiles");
         return $view->fetch('index');
 
     }
