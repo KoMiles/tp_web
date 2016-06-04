@@ -21,5 +21,7 @@ return [
     'prefix'      => '',
     // 数据库调试模式
     'debug'       => false,
+    //自动写入文件
+    'auto_timestamp' => true,
 ]
 ?>

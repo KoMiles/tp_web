@@ -8,9 +8,12 @@ APP_DEBUG	public/index.php	/^define('APP_DEBUG', true);$/;"	d
 APP_DEBUG	thinkphp/start.php	/^    define('APP_DEBUG', $debug);$/;"	d
 APP_PATH	public/index.php	/^define('APP_PATH', __DIR__ . '\/..\/application\/');$/;"	d
 Apc	thinkphp/library/think/cache/driver/Apc.php	/^class Apc$/;"	c
+Api	application/index/controller/Api.php	/^class Api$/;"	c
 App	thinkphp/library/think/App.php	/^class App$/;"	c
 App	thinkphp/mode/console/App.php	/^class App$/;"	c
 Argument	thinkphp/library/think/console/input/Argument.php	/^class Argument$/;"	c
+Article	application/admin/controller/Article.php	/^class Article extends \\think\\Controller$/;"	c
+Article	application/admin/model/Article.php	/^class Article extends \\think\\Model$/;"	c
 Build	thinkphp/library/think/Build.php	/^class Build$/;"	c
 Build	thinkphp/library/think/console/command/Build.php	/^class Build extends Command$/;"	c
 Builder	thinkphp/library/think/db/Builder.php	/^abstract class Builder$/;"	c
@@ -60,8 +63,8 @@ IS_MAC	thinkphp/base.php	/^define('IS_MAC', strstr(PHP_OS, 'Darwin') ? 1 : 0);$/
 IS_POST	thinkphp/base.php	/^define('IS_POST', REQUEST_METHOD == 'POST' ? true : false);$/;"	d
 IS_PUT	thinkphp/base.php	/^define('IS_PUT', REQUEST_METHOD == 'PUT' ? true : false);$/;"	d
 IS_WIN	thinkphp/base.php	/^define('IS_WIN', strstr(PHP_OS, 'WIN') ? 1 : 0);$/;"	d
+Index	application/admin/controller/Index.php	/^class Index$/;"	c
 Index	application/index/controller/Index.php	/^class Index$/;"	c
-Index	application/test/controller/Index.php	/^class Index$/;"	c
 Ini	thinkphp/library/think/config/driver/Ini.php	/^class Ini$/;"	c
 Input	thinkphp/library/think/Input.php	/^class Input$/;"	c
 Input	thinkphp/library/think/console/Input.php	/^class Input$/;"	c
@@ -86,6 +89,7 @@ Model	thinkphp/library/think/console/command/make/Model.php	/^class Model extend
 Mysql	thinkphp/library/think/db/builder/Mysql.php	/^class Mysql extends Builder$/;"	c
 Mysql	thinkphp/library/think/db/connector/Mysql.php	/^class Mysql extends Connection$/;"	c
 NOW_TIME	thinkphp/base.php	/^define('NOW_TIME', $_SERVER['REQUEST_TIME']);$/;"	d
+News	application/index/controller/News.php	/^class News$/;"	c
 NotFoundException	thinkphp/library/think/exception/NotFoundException.php	/^class NotFoundException extends Exception $/;"	c
 Nothing	thinkphp/library/think/console/output/Nothing.php	/^class Nothing extends Output$/;"	c
 Option	thinkphp/library/think/console/input/Option.php	/^class Option$/;"	c
@@ -139,7 +143,6 @@ THINK_VERSION	thinkphp/base.php	/^define('THINK_VERSION', '5.0.0 RC3');$/;"	d
 TagLib	thinkphp/library/think/template/TagLib.php	/^class TagLib$/;"	c
 Template	thinkphp/library/think/Template.php	/^class Template$/;"	c
 Test	application/index/controller/Test.php	/^class Test$/;"	c
-Test	application/test/controller/Test.php	/^class Test$/;"	c
 Test	thinkphp/library/think/cache/driver/Test.php	/^class Test$/;"	c
 Test	thinkphp/library/think/log/driver/Test.php	/^class Test$/;"	c
 Think	thinkphp/library/think/view/driver/Think.php	/^class Think$/;"	c
@@ -368,6 +371,8 @@ action	thinkphp/library/think/Url.php	/^                $action     = array_pop(
 actionName	thinkphp/library/think/App.php	/^        $actionName = strip_tags($result[2] ?: Config::get('default_action'));$/;"	v
 active	thinkphp/library/think/Session.php	/^    protected static $active = false;$/;"	v
 activeUrl	thinkphp/library/think/Validate.php	/^    protected function activeUrl($value, $rule)$/;"	f
+add	application/admin/controller/Article.php	/^    public function add()$/;"	f
+add	application/admin/model/Article.php	/^    public function add($data) {$/;"	f
 add	thinkphp/library/think/Console.php	/^    public function add(Command $command)$/;"	f
 add	thinkphp/library/think/Hook.php	/^    public static function add($tag, $behavior, $first = false)$/;"	f
 add	thinkphp/library/think/process/Builder.php	/^    public function add($argument)$/;"	f
@@ -469,6 +474,7 @@ array	thinkphp/library/think/model/Merge.php	/^        $array  = [];$/;"	v
 array	thinkphp/library/think/template/TagLib.php	/^                        $array = (array) $val['alias'];$/;"	v
 array	thinkphp/library/think/template/TagLib.php	/^                $array = (array) $val['alias'];$/;"	v
 array	thinkphp/library/think/template/taglib/Cx.php	/^            $array = explode(',', $file);$/;"	v
+article	application/admin/controller/Article.php	/^        $article = new \\app\\admin\\model\\Article();$/;"	v
 ask	thinkphp/library/think/console/helper/Question.php	/^    public function ask(Input $input, Output $output, OutputQuestion $question)$/;"	f
 assign	thinkphp/library/think/Controller.php	/^    public function assign($name, $value = '')$/;"	f
 assign	thinkphp/library/think/Template.php	/^    public function assign($name, $value = '')$/;"	f
@@ -722,6 +728,10 @@ condition	thinkphp/library/think/db/Query.php	/^        $condition = !empty($thi
 condition	thinkphp/library/think/template/TagLib.php	/^        $condition = str_ireplace(array_keys($this->comparison), array_values($this->comparison), $condition);$/;"	v
 condition	thinkphp/library/think/template/taglib/Cx.php	/^        $condition = !empty($tag['expression']) ? $tag['expression'] : $tag['condition'];$/;"	v
 condition	thinkphp/library/think/template/taglib/Cx.php	/^        $condition = $this->parseCondition($condition);$/;"	v
+config	application/admin/controller/Index.php	/^        $config = \\think\\Config::get('database');$/;"	v
+config	application/admin/controller/Index.php	/^    public function config()$/;"	f
+config	application/index/controller/Index.php	/^        $config = \\think\\Config::get('database');$/;"	v
+config	application/index/controller/Index.php	/^    public function config()$/;"	f
 config	thinkphp/helper.php	/^function config($name = '', $value = null, $range = '')$/;"	f
 config	thinkphp/library/think/App.php	/^                $config = Config::load(APP_PATH . $module . $config['app_status'] . EXT);$/;"	v
 config	thinkphp/library/think/App.php	/^            $config = Config::load(APP_PATH . $module . 'config' . EXT);$/;"	v
@@ -870,6 +880,8 @@ cwd	thinkphp/library/think/Process.php	/^        $this->cwd = $cwd;$/;"	v
 cwd	thinkphp/library/think/Process.php	/^    private $cwd;$/;"	v
 cwd	thinkphp/library/think/process/Builder.php	/^        $this->cwd = $cwd;$/;"	v
 cwd	thinkphp/library/think/process/Builder.php	/^    private $cwd;$/;"	v
+data	application/index/controller/Api.php	/^        $data = ['name'=>'thinkphp','url'=>'thinkphp.cn'];$/;"	v
+data	application/index/controller/Api.php	/^        $data = array('name'=>'thinkphp','url'=>'thinkphp.cn');$/;"	v
 data	thinkphp/library/think/App.php	/^                $data   = $method->invokeArgs($instance, [$action, '']);$/;"	v
 data	thinkphp/library/think/App.php	/^                $data = Loader::action(self::$dispatch['controller'], self::$dispatch['params']);$/;"	v
 data	thinkphp/library/think/App.php	/^                $data = self::invokeFunction(self::$dispatch['function'], self::$dispatch['params']);$/;"	v
@@ -1505,6 +1517,7 @@ getIterator	thinkphp/library/think/console/helper/Set.php	/^    public function 
 getKv	thinkphp/library/think/cache/driver/Sae.php	/^    private function getKv()$/;"	f
 getLastInsID	thinkphp/library/think/db/Connection.php	/^    public function getLastInsID()$/;"	f
 getLastSql	thinkphp/library/think/db/Connection.php	/^    public function getLastSql()$/;"	f
+getList	application/admin/model/Article.php	/^    public function getList($limit = 10) {$/;"	f
 getLog	thinkphp/library/think/Log.php	/^    public static function getLog()$/;"	f
 getLongVersion	thinkphp/library/think/Console.php	/^    public function getLongVersion()$/;"	f
 getMaxAttempts	thinkphp/library/think/console/helper/question/Question.php	/^    public function getMaxAttempts()$/;"	f
@@ -1555,6 +1568,7 @@ getRelationInfo	thinkphp/library/think/model/Relation.php	/^    public function 
 getResult	thinkphp/library/think/db/Connection.php	/^    protected function getResult()$/;"	f
 getRouteAlias	thinkphp/library/think/Url.php	/^    private static function getRouteAlias()$/;"	f
 getRouteUrl	thinkphp/library/think/Url.php	/^    public static function getRouteUrl($alias, &$vars = [])$/;"	f
+getRow	application/admin/model/Article.php	/^    public function getRow($id) {$/;"	f
 getRuleMsg	thinkphp/library/think/Validate.php	/^    protected function getRuleMsg($attribute, $title, $type, $rule)$/;"	f
 getRules	thinkphp/library/think/Route.php	/^    public static function getRules($method = '')$/;"	f
 getScene	thinkphp/library/think/Validate.php	/^    protected function getScene($scene = '')$/;"	f
@@ -1663,6 +1677,7 @@ header	thinkphp/library/think/Response.php	/^    public static function header($
 header_padding	thinkphp/library/think/cache/driver/Secache.php	/^    public $header_padding   = 20; \/\/保留空间 放置php标记防止下载$/;"	v
 headers	thinkphp/library/think/Response.php	/^        $headers = [$/;"	v
 headers	thinkphp/library/think/log/driver/Socket.php	/^        $headers = [$/;"	v
+hello	application/admin/controller/Index.php	/^    public function hello()$/;"	f
 hello	application/index/controller/Index.php	/^    public function hello()$/;"	f
 help	thinkphp/library/think/console/command/Command.php	/^        $this->help = $help;$/;"	v
 help	thinkphp/library/think/console/command/Command.php	/^    private $help;$/;"	v
@@ -1696,6 +1711,7 @@ i	thinkphp/library/think/cache/driver/Secache.php	/^            $i         = 0;$
 i	thinkphp/library/think/console/helper/Question.php	/^                        $i = strlen($ret);$/;"	v
 i	thinkphp/library/think/console/helper/Question.php	/^        $i          = 0;$/;"	v
 i	thinkphp/library/think/db/Query.php	/^        $i            = 0;$/;"	v
+id	application/index/controller/News.php	/^        $id = Input::get('id');$/;"	v
 id	thinkphp/library/think/model/Relation.php	/^            $id         = $data->$relationFk;$/;"	v
 id	thinkphp/library/think/model/Relation.php	/^            $id         = $model->$relationFk;$/;"	v
 id	thinkphp/library/think/model/Relation.php	/^            $id = $data;$/;"	v
@@ -1726,12 +1742,17 @@ incrementalOutputOffset	thinkphp/library/think/Process.php	/^        $this->incr
 incrementalOutputOffset	thinkphp/library/think/Process.php	/^        $this->incrementalOutputOffset = 0;$/;"	v
 incrementalOutputOffset	thinkphp/library/think/Process.php	/^        $this->incrementalOutputOffset = strlen($data);$/;"	v
 incrementalOutputOffset	thinkphp/library/think/Process.php	/^    private $incrementalOutputOffset      = 0;$/;"	v
+index	application/admin/controller/Article.php	/^    public function index()$/;"	f
+index	application/admin/controller/Index.php	/^    public function index()$/;"	f
+index	application/index/controller/Api.php	/^    public function index()$/;"	f
 index	application/index/controller/Index.php	/^    public function index()$/;"	f
+index	application/index/controller/News.php	/^    public function index()$/;"	f
 index	application/index/controller/Test.php	/^    public function index()$/;"	f
-index	application/test/controller/Index.php	/^    public function index()$/;"	f
-index	application/test/controller/Test.php	/^    public function index()$/;"	f
+index	application/index/controller/Web.php	/^    public function index()$/;"	f
 index	thinkphp/library/think/db/Builder.php	/^            $index = join(",", $index);$/;"	v
 index	thinkphp/library/think/template/taglib/Cx.php	/^            $index = $tag['index'];$/;"	v
+info	application/admin/controller/Index.php	/^    public function info()$/;"	f
+info	application/index/controller/Index.php	/^    public function info()$/;"	f
 info	thinkphp/library/think/Console.php	/^            $info = stream_get_contents($pipes[1]);$/;"	v
 info	thinkphp/library/think/Db.php	/^        $info = parse_url($dsnStr);$/;"	v
 info	thinkphp/library/think/Debug.php	/^            $info  = [];$/;"	v
@@ -2039,6 +2060,8 @@ links	thinkphp/library/think/db/Connection.php	/^    protected $links = [];$/;"	
 list	thinkphp/library/think/Build.php	/^            $list = [$/;"	v
 list	thinkphp/library/think/model/Relation.php	/^        $list = $model->where($where)->where($closure)->with($subRelation)->select();$/;"	v
 list	thinkphp/library/think/model/Relation.php	/^        $list = $this->belongsToManyQuery($model, $this->middle, $localKey, $foreignKey, $where)->with($subRelation)->select();$/;"	v
+listAll	application/admin/controller/Article.php	/^    public function listAll()$/;"	f
+listOne	application/admin/controller/Article.php	/^    public function listOne()$/;"	f
 listRows	thinkphp/library/think/db/Query.php	/^            $listRows              = $listRows > 0 ? $listRows : (is_numeric($options['limit']) ? $options['limit'] : 20);$/;"	v
 listen	thinkphp/library/think/Hook.php	/^    public static function listen($tag, &$params = null)$/;"	f
 listen	thinkphp/library/think/db/Connection.php	/^    public function listen($callback)$/;"	f
@@ -2459,6 +2482,7 @@ outputDisabled	thinkphp/library/think/process/Builder.php	/^        $this->outpu
 outputDisabled	thinkphp/library/think/process/Builder.php	/^    private $outputDisabled = false;$/;"	v
 outputStream	thinkphp/library/think/console/Output.php	/^            $outputStream = 'php:\/\/output';$/;"	v
 outputStream	thinkphp/library/think/console/Output.php	/^        $outputStream = 'php:\/\/stdout';$/;"	v
+page	application/index/controller/News.php	/^        $page = Input::get('page');$/;"	v
 page	thinkphp/library/think/db/Query.php	/^            $page                  = $page > 0 ? $page : 1;$/;"	v
 page	thinkphp/library/think/db/Query.php	/^    public function page($page, $listRows = null)$/;"	f
 panDomain	thinkphp/library/think/Route.php	/^                            $panDomain = $domain2;$/;"	v
@@ -2796,6 +2820,7 @@ range	thinkphp/library/think/Lang.php	/^        $range = $range ?: self::$range;
 range	thinkphp/library/think/Lang.php	/^    private static $range = 'zh-cn';$/;"	v
 range	thinkphp/library/think/Lang.php	/^    public static function range($range = '')$/;"	f
 range	thinkphp/library/think/model/Relation.php	/^                    $range = [];$/;"	v
+read	application/index/controller/News.php	/^    public function read() {$/;"	f
 read	thinkphp/library/think/process/pipes/Unix.php	/^        $read = [];$/;"	v
 read	thinkphp/library/think/process/pipes/Windows.php	/^        $read = [];$/;"	v
 read	thinkphp/library/think/session/driver/Memcache.php	/^    public function read($sessID)$/;"	f
@@ -2892,6 +2917,11 @@ requireProcessIsTerminated	thinkphp/library/think/Process.php	/^    private func
 requireWith	thinkphp/library/think/Validate.php	/^    protected function requireWith($value, $rule, $data)$/;"	f
 requiredCount	thinkphp/library/think/console/input/Definition.php	/^        $this->requiredCount      = 0;$/;"	v
 requiredCount	thinkphp/library/think/console/input/Definition.php	/^    private $requiredCount;$/;"	v
+res	application/admin/controller/Article.php	/^        $res = $article -> add($data);$/;"	v
+res	application/admin/controller/Article.php	/^        $res = $article -> getList(6);$/;"	v
+res	application/admin/controller/Article.php	/^        $res = $article -> getRow(1);$/;"	v
+res	application/admin/controller/Index.php	/^        $res = $_SERVER['PATH_INFO'];$/;"	v
+res	application/index/controller/Index.php	/^        $res = $_SERVER['PATH_INFO'];$/;"	v
 reset	thinkphp/library/think/Config.php	/^    public static function reset($range = '')$/;"	f
 reset	thinkphp/library/think/console/output/formatter/Stack.php	/^    public function reset()$/;"	f
 resetProcessData	thinkphp/library/think/Process.php	/^    private function resetProcessData()$/;"	f
@@ -3085,6 +3115,8 @@ route	thinkphp/library/think/Url.php	/^                        $route = implode(
 route	thinkphp/library/think/Url.php	/^                    $route = $route[0];$/;"	v
 route	thinkphp/library/think/Url.php	/^                    $route = implode('\\\\', $route);$/;"	v
 route	thinkphp/library/think/Url.php	/^                $route = $val['route'];$/;"	v
+rs	application/admin/controller/Index.php	/^        $rs = $_SERVER;$/;"	v
+rs	application/index/controller/Index.php	/^        $rs = $_SERVER;$/;"	v
 rule	thinkphp/library/think/Route.php	/^                            $rule      = $rules['*'];$/;"	v
 rule	thinkphp/library/think/Route.php	/^                        $rule      = $rules['*.' . $domain2];$/;"	v
 rule	thinkphp/library/think/Route.php	/^                        $rule = $rules[$subDomain];$/;"	v
@@ -3385,6 +3417,7 @@ stop	thinkphp/library/think/console/helper/Debug.php	/^    public function stop(
 storage	thinkphp/library/think/Template.php	/^        $this->storage = new $class();$/;"	v
 storage	thinkphp/library/think/Template.php	/^    protected $storage   = null;$/;"	v
 store	thinkphp/library/think/cache/driver/Secache.php	/^    public function store($key, $value)$/;"	f
+str	application/index/controller/News.php	/^        $str = "This is read action";$/;"	v
 str	thinkphp/library/think/Template.php	/^                                            $str = '<?php echo !empty(' . $name . ')?' . $str . '; ?>';$/;"	v
 str	thinkphp/library/think/Template.php	/^                                            $str = '<?php echo ' . $name . '?' . $str . '; ?>';$/;"	v
 str	thinkphp/library/think/Template.php	/^                                        $str = '<?php echo !empty(' . $name . ')?' . $name . $str . '; ?>';$/;"	v
@@ -3465,6 +3498,7 @@ tableName	thinkphp/library/think/db/Query.php	/^            $tableName = $this->
 tableName	thinkphp/library/think/db/Query.php	/^            $tableName = key($tableName) ?: current($tableName);$/;"	v
 tableName	thinkphp/library/think/db/connector/Mysql.php	/^            $tableName = str_replace('.', '`.`', $tableName);$/;"	v
 tableName	thinkphp/library/think/model/Relation.php	/^        $tableName  = $model->getTable();$/;"	v
+table_name	application/admin/model/Article.php	/^    private static $table_name = 'Article';$/;"	v
 tables	thinkphp/library/think/db/Builder.php	/^            $tables = $array;$/;"	v
 tables	thinkphp/library/think/db/Builder.php	/^            $tables = $this->parseSqlTable($tables);$/;"	v
 tables	thinkphp/library/think/db/Builder.php	/^            $tables = array_map([$this, 'parseKey'], explode(',', $tables));$/;"	v
@@ -3504,6 +3538,10 @@ templateName	thinkphp/library/think/Template.php	/^                $templateName
 template_deny_funs	thinkphp/library/think/Template.php	/^            $template_deny_funs = explode(',', $this->config['tpl_deny_func_list']);$/;"	v
 terminalDimensions	thinkphp/library/think/Console.php	/^        $this->terminalDimensions = [$width, $height];$/;"	v
 terminalDimensions	thinkphp/library/think/Console.php	/^    private $terminalDimensions;$/;"	v
+test	application/admin/controller/Index.php	/^    public function test()$/;"	f
+test	application/index/controller/Api.php	/^    public function test() {$/;"	f
+test	application/index/controller/Index.php	/^    public function test()$/;"	f
+test	application/index/controller/Web.php	/^    public function test()$/;"	f
 test	thinkphp/library/think/console/helper/Question.php	/^            $test = "\/usr\/bin\/env %s -c 'echo OK' 2> \/dev\/null";$/;"	v
 text	thinkphp/library/think/console/output/Formatter.php	/^            $text = $match[0];$/;"	v
 threshold	thinkphp/library/think/Console.php	/^        $threshold    = 1e3;$/;"	v
@@ -3521,6 +3559,8 @@ timeout	thinkphp/library/think/process/Builder.php	/^        $timeout = (float)$
 timeout	thinkphp/library/think/process/Builder.php	/^    private $timeout        = 60;$/;"	v
 timeoutType	thinkphp/library/think/process/exception/Timeout.php	/^        $this->timeoutType = $timeoutType;$/;"	v
 timeoutType	thinkphp/library/think/process/exception/Timeout.php	/^    private $timeoutType;$/;"	v
+title	application/admin/controller/Article.php	/^        $title = "文章列表";$/;"	v
+title	application/admin/controller/Article.php	/^        $title = "文章管理后台";$/;"	v
 title	thinkphp/library/think/Console.php	/^            $title = sprintf('  [%s]  ', get_class($e));$/;"	v
 title	thinkphp/library/think/Validate.php	/^                $title = $key;$/;"	v
 tmpExe	thinkphp/library/think/console/helper/Question.php	/^                $tmpExe = sys_get_temp_dir() . '\/hiddeninput.exe';$/;"	v
@@ -3614,6 +3654,7 @@ unlink	thinkphp/library/think/cache/driver/File.php	/^    private function unlin
 unlock	thinkphp/library/think/cache/driver/Secache.php	/^    public function unlock()$/;"	f
 unsetCodes	thinkphp/library/think/console/output/formatter/Style.php	/^        $unsetCodes = [];$/;"	v
 unsetOption	thinkphp/library/think/console/output/formatter/Style.php	/^    public function unsetOption($option)$/;"	f
+update	application/index/controller/News.php	/^    public function update() {$/;"	f
 update	thinkphp/library/think/Model.php	/^    protected $update = [];$/;"	v
 update	thinkphp/library/think/Model.php	/^    public static function update($data = [], $where = [])$/;"	f
 update	thinkphp/library/think/db/Builder.php	/^    public function update($data, $options)$/;"	f
@@ -3814,6 +3855,8 @@ version	thinkphp/library/think/Console.php	/^        $this->version = $version;$
 version	thinkphp/library/think/Console.php	/^    private $version;$/;"	v
 version	thinkphp/library/think/template/taglib/Cx.php	/^                    $version = '';$/;"	v
 via	thinkphp/library/think/db/Query.php	/^    public function via($via = '')$/;"	f
+view	application/admin/controller/Article.php	/^        $view = new View();$/;"	v
+view	application/index/controller/News.php	/^        $view = new \\think\\View();$/;"	v
 view	thinkphp/helper.php	/^function view($template = '', $vars = [])$/;"	f
 view	thinkphp/library/think/Controller.php	/^        $this->view = View::instance(Config::get('template'), Config::get('view_replace_str'));$/;"	v
 view	thinkphp/library/think/Controller.php	/^    protected $view = null;$/;"	v
@@ -3823,6 +3866,7 @@ wait	thinkphp/library/think/Process.php	/^    public function wait($callback = n
 wantHelps	thinkphp/library/think/Console.php	/^                $this->wantHelps = true;$/;"	v
 wantHelps	thinkphp/library/think/Console.php	/^            $this->wantHelps = false;$/;"	v
 wantHelps	thinkphp/library/think/Console.php	/^    private $wantHelps = false;$/;"	v
+web	application/index/controller/Web.php	/^class web$/;"	c
 where	thinkphp/library/think/db/Builder.php	/^            $where = [];$/;"	v
 where	thinkphp/library/think/db/Query.php	/^                $where = $field;$/;"	v
 where	thinkphp/library/think/db/Query.php	/^                $where = '';$/;"	v

@@ -11,17 +11,7 @@ namespace app\admin\model;
  */
 class Article extends \think\Model
 {
-    //public function getRow($id) {
-        //$res =  \think\Db::table('Article') -> where('id','1')->find();
-        //var_dump($res);exit;
-    //}
-
-    //public function getList() {
-        //$res =  \think\Db::table('Article') -> where('id','1')->select();
-        //var_dump($res);exit;
-    //}
-    protected static $table = 'Article';
-
+    private static $table_name = 'Article';
     /**
      * getRow 
      * 获取单条数据
@@ -30,24 +20,45 @@ class Article extends \think\Model
      * @return void
      */
     public function getRow($id) {
-        $article_res = Article::get($id);
-        if($article_res) {
-            return $article_res-> toArray();
-        } else {
-            return array();
-        }
+        return \think\Db::table(self::$table_name) -> where('id',$id)->find();
     }
 
-    public function getList() {
-        $where = array('id','>','5');
-        $res =  \think\Db::table('Article') -> where('id','>','5')->limit(2)->select();
-        return $res;
-        //var_dump($res);exit;
-        //$list = Article::all($where);
-        ////$list = Article::where('id','>',10)->select();
-        //foreach($list as $k => $v) {
-            //$list[$k] = $v -> toArray();
-        //}
-        //return $list;
+    /**
+     * getList 
+     * 文章列表
+     * @param int $limit 
+     * @access public
+     * @return void
+     */
+    public function getList($limit = 10) {
+        return \think\Db::table(self::$table_name) -> limit($limit)->select();
     }
+
+    /**
+     * createArticle 
+     * 添加文章
+     * @param mixed $data 
+     * @access public
+     * @return void
+     */
+    public function createArticle($data) {
+        $data['create_ts'] = time();
+        $data['update_ts'] = time();
+        return \think\Db::table(self::$table_name)->insert($data);
+    }
+
+    /**
+     * updateArticle 
+     * 修改文章
+     * @param mixed $data 
+     * @param mixed $id 
+     * @access public
+     * @return void
+     */
+    public function updateArticle($data,$id) {
+        $data['update_ts'] = time();
+        return \think\Db::table(self::$table_name) -> where('id',$id) -> update($data);
+    }
+
+
 }

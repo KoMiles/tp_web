@@ -1,5 +1,5 @@
-<?php include('header.html');?>
-
+<?php include(VIEW_PATH.CONTROLLER_NAME.'/header.html');?>
+<?php echo VIEW_PATH;?>
 <p>文章列表</p>
 <table stype="border-collapse:collapse;" border="1px" bordercolor="#666666" cellspacing="0px" width="960px" height="800px" >
     <tr><td>编号</td><td>作者</td><td>标题</td><td>内容</td><td>状态</td><td>创建时间</td><td>操作</td></tr>
@@ -17,4 +17,4 @@
 </table>
 <?php echo $page_string;?>
 <br>
-<?php include('footer.html');?>
+<?php include(VIEW_PATH.CONTROLLER_NAME.'/footer.html');?>
