@@ -16,9 +16,13 @@ class Article extends \think\Controller
 
     public function listAll()
     {
+        $page = Input::request('page');
+        $page  = $page > 1 ? $page : 1;
+        var_dump($page);exit;
+        $limit = 6;
         $title = "文章列表";
         $article = new \app\admin\model\Article();
-        $article_list = $article -> getList(6);
+        $article_list = $article -> getList($page,$limit);
         foreach ($article_list as $key => $row) {
             $article_list[$key]['date'] = date('Y-m-d H:i:s',$row['create_ts']);
             $article_list[$key]['statusCn'] = $row['status'] == 'normal' ? '正常' : '已删除';

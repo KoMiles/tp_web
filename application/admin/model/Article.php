@@ -30,8 +30,8 @@ class Article extends \think\Model
      * @access public
      * @return void
      */
-    public function getList($limit = 10) {
-        return \think\Db::table(self::$table_name) -> limit($limit)->select();
+    public function getList($page= 1,$limit = 10) {
+        return \think\Db::table(self::$table_name) -> limit($limit) -> page($page)->select();
     }
 
     /**
