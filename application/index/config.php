@@ -1,10 +1,10 @@
 <?php
 return [
-    'default_return_type'=>'json',
-    //'DEFAULT_CHARSET'=>'utf-8',
-    'log'          => [
-        'type' => 'trace', // 支持 socket trace file
-    ],
+    //'default_return_type'=>'json',
+    ////'DEFAULT_CHARSET'=>'utf-8',
+    //'log'          => [
+        //'type' => 'trace', // 支持 socket trace file
+    //],
     //[> 数据库设置 <]
     //'database'   => [
         //// 数据库类型
@@ -28,5 +28,5 @@ return [
         //// 数据库调试模式
         //'debug'       => false,
     //],
-    'extra_config_list'     => ['database'],
+    //'extra_config_list'     => ['database'],
 ];

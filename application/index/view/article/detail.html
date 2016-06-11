@@ -1,0 +1,9 @@
+<?php include(VIEW_PATH.CONTROLLER_NAME.'/header.html');?>
+<form method="post" action="/admin/article/modify_ajax">
+    文章标题：<?php echo $info['title'];?> <br/>
+    作者：<?php echo $info['author'];?> <br/>
+    内容：
+<?php echo $info['content'];?>
+<br/>
+<?php include(VIEW_PATH.CONTROLLER_NAME.'/footer.html');?>
+
