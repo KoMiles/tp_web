@@ -32,9 +32,11 @@ class Article extends \think\Controller
         $myPage = new Pager($total,$page);
         $pageStr= $myPage->GetPagerContent();
         $view = new View();
-        $view -> assign("article_list",$article_list);
+        $view -> assign("article_list",$article_list) -> assign("page_string",$pageStr);
         $view -> assign("page_string",$pageStr);
+        $view -> assign("num",8);
         return $view -> fetch("list");
+        //return $view -> display("list");
     }
 
     /**

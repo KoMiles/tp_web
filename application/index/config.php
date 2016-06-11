@@ -29,4 +29,5 @@ return [
         //'debug'       => false,
     //],
     //'extra_config_list'     => ['database'],
+    'log'=>'app.log',
 ];

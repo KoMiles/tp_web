@@ -20,7 +20,11 @@ class Article extends \think\Model
      * @return void
      */
     public function getRow($id) {
-        return \think\Db::table(self::$table_name) -> where('id',$id)->find();
+        if($id) {
+            return \think\Db::table(self::$table_name) -> where('id',$id)->find();
+        } else {
+            return array();
+        }
     }
 
     /**
