@@ -12,9 +12,9 @@
 
 return [
     'url_route_on' => true,
-    'log'          => [
-        'type' => 'trace', // 支持 socket trace file
-    ],
+    //'log'          => [
+        //'type' => 'trace', // 支持 socket trace file
+    //],
     //'default_return_type'=>'json',
     //'URL_MODEL'          => '2', //URL模式
     //'DEFAULT_CHARSET'=>'utf-8'

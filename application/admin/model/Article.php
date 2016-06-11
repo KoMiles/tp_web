@@ -31,7 +31,7 @@ class Article extends \think\Model
      * @return void
      */
     public function getList($page= 1,$limit = 10) {
-        return \think\Db::table(self::$table_name) -> limit($limit) -> page($page)->select();
+        return \think\Db::table(self::$table_name) -> limit($limit) -> order('id','desc')-> page($page)->select();
     }
 
     /**
@@ -60,5 +60,8 @@ class Article extends \think\Model
         return \think\Db::table(self::$table_name) -> where('id',$id) -> update($data);
     }
 
-
+    public function getCount() {
+        return \think\Db::table(self::$table_name) -> count();
+    }
+    
 }
