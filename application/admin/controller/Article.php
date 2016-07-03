@@ -95,11 +95,38 @@ class Article extends \think\Controller
         }
     }
 
+    /**
+     * delete 
+     * 删除文章
+     * @access public
+     * @return void
+     */
     public function delete()
     {
         $id = Input::request('id');
         $article = new \app\admin\model\Article();
         $data['status'] = 'delete';
+        $result = $article -> updateArticle($data,$id);
+        if($result){
+            //设置成功后跳转页面的地址，默认的返回页面是$_SERVER['HTTP_REFERER']
+            return $this->success('操作成功', '/admin/article/listall');
+        } else {
+            //错误页面的默认跳转页面是返回前一页，通常不需要设置
+            return $this->error('操作失败');
+        }
+    }
+
+    /**
+     * recove 
+     * 恢复文章
+     * @access public
+     * @return void
+     */
+    public function recove()
+    {
+        $id = Input::request('id');
+        $article = new \app\admin\model\Article();
+        $data['status'] = 'normal';
         $result = $article -> updateArticle($data,$id);
         if($result){
             //设置成功后跳转页面的地址，默认的返回页面是$_SERVER['HTTP_REFERER']

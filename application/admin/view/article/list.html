@@ -11,7 +11,11 @@
             <td>{$row['content']}</td>
             <td>{$row['statusCn']}</td>
             <td>{$row['date']}</td>
-            <td><a href="/admin/article/add/id/{$row['id']}/">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/article/delete/id/{$row['id']}">删除</a></td>
+            <td>
+                <a href="/admin/article/add/id/{$row['id']}/">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/admin/article/delete/id/{$row['id']}">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/admin/article/recove/id/{$row['id']}">恢复</a>
+                </td>
         {/foreach}
         </tr>
     </table>
@@ -19,20 +23,4 @@
 {else}
         没有数据
 {/if}
-<h3>大于小于
-</h3>
-{if condition="$num gt 10"}
-大于10
-{elseif condition="$num lt 10"}
-小于10
-{else}
-等于10
-{/if}
-<h3>判断是否在里面</h3>
-<in name='num' value="12,24"> 在<else/>不在</in>
-<br>
-<h3>三元运算</h3>
-{$num}
-{$num?"不大于10":"大于10"}
-<br/>
 <?php include(VIEW_PATH.CONTROLLER_NAME.'/footer.html');?>

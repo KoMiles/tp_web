@@ -3,17 +3,5 @@
     文章标题：{$info['title']|default='hello'} <br/>
     作者：{$info.author|default='zhangsan'} <br/>
     内容：{$info['content']|default='content'}
-    <h3>数字计算</h3>
-    a+b={$info['a']%$info['b']}
-    <h3>函数执行</h3>
-    md5加密：{$info['title']|md5}<br/>
-    加密后截取：{$info['title']|md5|substr=0,5}
-    <h3>日期函数</h3>
-    日期：{$now|date="Y-m-d H:i:s",###}<br/>
-    <h3>框架变量</h3>
-    日期：{$Think.now}<br/>
-    版本：{$Think.version}<br/>
-    http_host：{$Think.server.http_host}<br/>
-<br/>
 <?php include(VIEW_PATH.CONTROLLER_NAME.'/footer.html');?>
 
