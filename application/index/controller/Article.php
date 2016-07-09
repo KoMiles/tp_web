@@ -3,6 +3,14 @@ namespace app\index\controller;
 
 use \think\View;
 use \think\Input;
+/**
+ * Article 
+ * 文章首页
+ * @package 
+ * @version $Id$
+ * @author wangkongming <komiles@163.com> 
+ * @date 2016-07-09 17:23:39
+ */
 class Article extends \think\Controller
 {
     public function index()
@@ -10,6 +18,13 @@ class Article extends \think\Controller
         return 'hello thinkphp2';
 
     }
+
+    /**
+     * detail 
+     * 
+     * @access public
+     * @return void
+     */
     public function detail()
     {
         $id = Input::request('id');
@@ -42,6 +57,6 @@ class Article extends \think\Controller
      * @return void
      */
     public function show() {
-        show();
+        show1();
     }
 }
